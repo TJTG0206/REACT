@@ -1,54 +1,34 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render () {
         return(
-            <header className="gnb_box">
-                <div className="hd_top">
-                    <div className="top_wrap ct1 af">
-                    <ul className="hd_left af">
-                        <li className="my1"><b>내정보</b>
-                        </li>
-                        <li  className="my2"><b><span>1</span>알림</b>
-                        </li>
-                    </ul>
-                    <div className="hd_right">
-                        <p><span>'홍길동'</span>님 반갑습니다.</p>
-                    </div>
+             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+           
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-                <div className="h_nav ct1 af">
-                    <div className="logo">
-                        <Link to={'/'}><img src={require("../../img/layout/logo.jpg")} height="65px" width="200px" alt=""/></Link>
+            </form>
+            
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="login.html">Logout</a>
                     </div>
-                    <nav className="gnb gnb_admin">
-                    <ul className="af">
-                        <li className="menulist">
-                            <Link to={'/UserApproval'}>사용자 관리</Link>
-                        </li>
-                        <li className="menulist">
-                            <Link to={'/AdminResearchProject'}>Research Projects 관리</Link>
-                        </li>
-                        <li className="menulist">
-                            <Link to={'/AdminSoftwareList'}>Software Tools 관리</Link>
-                        </li>
-                        <li className="menulist">
-                            <Link to={'/AdminDataSourceList'}>Data Sources 관리</Link>
-                        </li>
-                        {/* 드롭다운 이벤트 */}
-                        <li  className="menulist"><Link to={'/floatPopulationList'}>유동인구 조회</Link>
-                        <ul className="gn_2">
-                            <li><Link to={'/community/notice'}>공지사항</Link></li>
-                        </ul>
-                        </li>
-                        <li  className="menulist">
-                            <Link to={'/SubCodeManage'}>Sub code 관리</Link>
-                        </li>
-                    </ul>
-                    </nav>
-                </div>
-            </header>
+                </li>
+            </ul>
+        </nav>
         );
     }
 }
