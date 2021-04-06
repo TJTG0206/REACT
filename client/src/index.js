@@ -15,6 +15,12 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+/**
+ * "Hello {이름}"을 반환하는 메소드
+ *
+ * @param {string} name 사용자가 반환하길 원하는 이름을 출력합니다.
+ * @returns {string} Hello + name
+ */
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
