@@ -1,12 +1,12 @@
 /*!
 
 =========================================================
-* Now UI Dashboard React - v1.4.0
+* Argon Dashboard React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/master/LICENSE.md)
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
 
 * Coded by Creative Tim
 
@@ -16,80 +16,80 @@
 
 */
 import React from "react";
-// javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from "perfect-scrollbar";
-
+import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
-import { Route, Switch, Redirect } from "react-router-dom";
-
+import { Container } from "reactstrap";
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import Footer from "components/Footer/Footer.js";
+import AdminNavbar from "components/Navbars/AdminNavbar.js";
+import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
-var ps;
+const Admin = (props) => {
+  const mainContent = React.useRef(null);
+  const location = useLocation();
 
-class Dashboard extends React.Component {
-  state = {
-    backgroundColor: "blue",
+  React.useEffect(() => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    mainContent.current.scrollTop = 0;
+  }, [location]);
+
+  const getRoutes = (routes) => {
+    return routes.map((prop, key) => {
+      if (prop.layout === "/admin") {
+        return (
+          <Route
+            path={prop.layout + prop.path}
+            component={prop.component}
+            key={key}
+          />
+        );
+      } else {
+        return null;
+      }
+    });
   };
-  mainPanel = React.createRef();
-  componentDidMount() {
-    if (navigator.platform.indexOf("Win") > -1) {
-      ps = new PerfectScrollbar(this.mainPanel.current);
-      document.body.classList.toggle("perfect-scrollbar-on");
+
+  const getBrandText = (path) => {
+    for (let i = 0; i < routes.length; i++) {
+      if (
+        props.location.pathname.indexOf(routes[i].layout + routes[i].path) !==
+        -1
+      ) {
+        return routes[i].name;
+      }
     }
-  }
-  componentWillUnmount() {
-    if (navigator.platform.indexOf("Win") > -1) {
-      ps.destroy();
-      document.body.classList.toggle("perfect-scrollbar-on");
-    }
-  }
-  componentDidUpdate(e) {
-    if (e.history.action === "PUSH") {
-      document.documentElement.scrollTop = 0;
-      document.scrollingElement.scrollTop = 0;
-      this.mainPanel.current.scrollTop = 0;
-    }
-  }
-  handleColorClick = (color) => {
-    this.setState({ backgroundColor: color });
+    return "Brand";
   };
-  render() {
-    return (
-      <div className="wrapper">
-        <Sidebar
-          {...this.props}
-          routes={routes}
-          backgroundColor={this.state.backgroundColor}
+
+  return (
+    <>
+      <Sidebar
+        {...props}
+        routes={routes}
+        logo={{
+          innerLink: "/admin/index",
+          imgSrc: require("../assets/img/brand/argon-react.png").default,
+          imgAlt: "...",
+        }}
+      />
+      <div className="main-content" ref={mainContent}>
+        <AdminNavbar
+          {...props}
+          brandText={getBrandText(props.location.pathname)}
         />
-        <div className="main-panel" ref={this.mainPanel}>
-          <DemoNavbar {...this.props} />
-          <Switch>
-            {routes.map((prop, key) => {
-              return (
-                <Route
-                  path={prop.layout + prop.path}
-                  component={prop.component}
-                  key={key}
-                />
-              );
-            })}
-            <Redirect from="/admin" to="/admin/dashboard" />
-          </Switch>
-          <Footer fluid />
-        </div>
-        <FixedPlugin
-          bgColor={this.state.backgroundColor}
-          handleColorClick={this.handleColorClick}
-        />
+        <Switch>
+          {getRoutes(routes)}
+          <Redirect from="*" to="/admin/index" />
+        </Switch>
+        <Container fluid>
+          <AdminFooter />
+        </Container>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
-export default Dashboard;
+export default Admin;
