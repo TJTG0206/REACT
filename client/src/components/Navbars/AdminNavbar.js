@@ -1,19 +1,8 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+/**
+* @author Dino <tejun87@knou.ac.kr>
+* @version 1.0.0 
+* @copyright UEV 2021.04
+* @file 사용자 상단 메뉴바
 */
 import React from "react";
 import { Link } from "react-router-dom";
@@ -35,6 +24,10 @@ import {
   Media,
 } from "reactstrap";
 
+/**
+* 가입/로그인 상단 메뉴바의 컴포넌트
+* @constant AdminNavbar 
+*/
 const AdminNavbar = (props) => {
   return (
     <>
@@ -84,24 +77,24 @@ const AdminNavbar = (props) => {
                 </DropdownItem>
                 <DropdownItem to="/admin/user-profile" tag={Link}>
                   <i className="ni ni-single-02" />
-                  <span>My profile</span>
+                  <span>내 프로필</span>
                 </DropdownItem>
                 <DropdownItem to="/admin/user-profile" tag={Link}>
                   <i className="ni ni-settings-gear-65" />
-                  <span>Settings</span>
+                  <span>설정</span>
                 </DropdownItem>
                 <DropdownItem to="/admin/user-profile" tag={Link}>
                   <i className="ni ni-calendar-grid-58" />
-                  <span>Activity</span>
+                  <span>활동</span>
                 </DropdownItem>
                 <DropdownItem to="/admin/user-profile" tag={Link}>
                   <i className="ni ni-support-16" />
-                  <span>Support</span>
+                  <span>지원</span>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="ni ni-user-run" />
-                  <span>Logout</span>
+                  <span>로그아웃</span>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

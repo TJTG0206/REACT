@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 165 165" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<title>UI/icons/color/naver</title>
+	<desc>Created with Adobe.</desc>
+	<defs/>
+	<g transform="translate(0.000000,165.000000) scale(0.100000,-0.100000)" fill="#1eb400" fill-opacity="1" fill-rule="nonzero" stroke="none">
+	<path d="M59 1627 c-61 -41 -60 -27 -57 -818 3 -708 3 -718 24 -746 11 -15 36
+-36 55 -45 31 -17 87 -18 744 -17 523 0 719 3 745 12 20 7 44 27 57 46 l23 35
+-2 743 -3 743 -33 32 -32 33 -743 3 -743 2 -35 -23z m767 -613 l119 -176 3
+176 2 176 140 0 140 0 0 -365 0 -365 -140 0 -139 0 -123 181 -123 180 -3 -180
+-2 -181 -135 0 -135 0 0 365 0 365 138 0 138 0 120 -176z"/>
+</g>
+</svg>

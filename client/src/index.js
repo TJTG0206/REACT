@@ -1,26 +1,9 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 /**
- * "Hello {이름}"을 반환하는 메소드
- *
- * @param {string} name 사용자가 반환하길 원하는 이름을 출력합니다.
- * @returns {string} Hello + name
- */
+* @author Dino <tejun87@knou.ac.kr>
+* @version 1.0.0 
+* @copyright UEV 2021.04
+* @file 개요 페이지
+*/
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";

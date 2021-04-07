@@ -1,6 +1,8 @@
 /**
-* AdminNavbar 클래스입니다
-* @class
+* @author Dino <tejun87@knou.ac.kr>
+* @version 1.0.0 
+* @copyright UEV 2021.04
+* @file 가입/로그인 상단 메뉴바
 */
 import React from "react";
 import { Link } from "react-router-dom";
@@ -17,6 +19,10 @@ import {
   Col,
 } from "reactstrap";
 
+/**
+* 가입/로그인 상단 메뉴바의 컴포넌트
+* @constant AdminNavbar 
+*/
 const AdminNavbar = () => {
   return (
     <>
@@ -59,7 +65,7 @@ const AdminNavbar = () => {
               <NavItem>
                 <NavLink className="nav-link-icon" to="/admin/index" tag={Link}>
                   <i className="ni ni-planet" />
-                  <span className="nav-link-inner--text">Dashboard</span>
+                  <span className="nav-link-inner--text">대시보드</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -69,13 +75,13 @@ const AdminNavbar = () => {
                   tag={Link}
                 >
                   <i className="ni ni-circle-08" />
-                  <span className="nav-link-inner--text">Register</span>
+                  <span className="nav-link-inner--text">가입하기</span>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link-icon" to="/auth/login" tag={Link}>
                   <i className="ni ni-key-25" />
-                  <span className="nav-link-inner--text">Login</span>
+                  <span className="nav-link-inner--text">로그인</span>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -85,7 +91,7 @@ const AdminNavbar = () => {
                   tag={Link}
                 >
                   <i className="ni ni-single-02" />
-                  <span className="nav-link-inner--text">Profile</span>
+                  <span className="nav-link-inner--text">프로필</span>
                 </NavLink>
               </NavItem>
             </Nav>

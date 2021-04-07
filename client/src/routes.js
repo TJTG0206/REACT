@@ -1,3 +1,10 @@
+/**
+* @author Dino <tejun87@knou.ac.kr>
+* @version 1.0.0 
+* @copyright UEV 2021.04
+* @file 경로 설정
+*/
+
 import Index from "views/Index.js";
 import Profile from "views/examples/Profile.js";
 import Maps from "views/examples/Maps.js";
